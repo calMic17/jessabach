@@ -7,7 +7,7 @@
   font-family: sans-serif;
 
   .navbar {
-    padding: 1.5rem;
+    padding: 0.5rem 50px;
     background: rgb(238, 236, 236);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -50,7 +50,8 @@
       display: flex;
       gap: 2rem;
       align-items: center;
-      list-style: none;
+      list-style: none; 
+
 
       li {
         font-weight: 500;

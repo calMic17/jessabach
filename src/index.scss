@@ -1,5 +1,4 @@
 
-@use './styles/_navBar';
 @tailwind utilities;
 
 
@@ -7,6 +6,7 @@
   --color-jessabach-gold: #D4AF37;
   --color-jessabach-dark: #1a1a1a;
 }
+
 body {
   margin: 0;
   padding: 0;
