@@ -1,0 +1,205 @@
+// JessaBach Brand Variables
+@use './variables' as *;
+
+.app-wrapper {
+  background-color: $gray-light;
+  color: $dark;
+  font-family: sans-serif;
+
+  .navbar {
+    padding: 1.5rem;
+    background: rgb(238, 236, 236);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+
+    .logo {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: $gold;
+      letter-spacing: -0.025em;
+
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      gap: 0.4rem;
+      padding: 0;
+
+      .hamburger-line {
+        width: 25px;
+        height: 3px;
+        background-color: $dark;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      &:hover .hamburger-line {
+        background-color: $gold;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+
+      li {
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+          color: $gold;
+        }
+
+        &.btn-enroll {
+          background-color: $gold;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+
+          &:hover {
+            filter: brightness(1.1);
+            color: white;
+          }
+        }
+      }
+    }
+
+  }
+
+  .hero {
+    max-width: 56rem;
+    margin: 5rem auto 0;
+    text-align: center;
+    padding: 0 1rem;
+
+    h2 {
+      font-family: $serif-font;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #4b5563;
+    }
+  }
+}
+
+// Mobile Responsive Styles
+@media (max-width: 768px) {
+  .app-wrapper {
+    .navbar {
+      padding: 1rem;
+      flex-wrap: wrap;
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+
+        &.active {
+          max-height: 500px;
+        }
+
+        li {
+          font-size: 0.875rem;
+          padding: 1rem;
+          border-bottom: 1px solid #f0f0f0;
+          width: 100%;
+          box-sizing: border-box;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &.btn-enroll {
+            background-color: $gold;
+            color: white;
+            padding: 1rem;
+            font-size: 0.875rem;
+            margin: 0.5rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .hero {
+      margin: 2rem auto 0;
+      padding: 0 1rem;
+
+      h2 {
+        font-size: 1.875rem;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Extra small devices
+@media (max-width: 480px) {
+  .app-wrapper {
+    .navbar {
+      padding: 0.75rem;
+
+      .logo {
+        font-size: 1.25rem;
+      }
+
+      .hamburger .hamburger-line {
+        width: 22px;
+        height: 2.5px;
+      }
+
+      .nav-links.active {
+        max-height: 400px;
+      }
+    }
+
+    .hero {
+      margin: 1.5rem auto 0;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+    }
+  }
+} 
