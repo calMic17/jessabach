@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import Button from './Button';
 import '../styles/_navBar.scss';
 
-function App() {
+function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -25,7 +26,7 @@ function App() {
           <li>About</li>
           <li>Servises</li>
           <li>Contact</li>
-          {/* <li className="btn-enroll">Enroll Now</li> */}
+          <Button variant="dark">Enroll Now</Button>
         </ul>
       </nav>
       
@@ -39,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default NavigationBar;

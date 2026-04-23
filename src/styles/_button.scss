@@ -1,0 +1,41 @@
+@use './variables' as *;
+
+.btn-dark {
+  background-color: transparent;
+  border: 2px solid $dark;
+  color: $dark;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $dark;
+    color: white;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-enroll {
+  background-color: $gold;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    filter: brightness(1.1);
+    color: white;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
