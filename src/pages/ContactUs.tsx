@@ -10,8 +10,8 @@ function ContactUs() {
     <div className="contact-page">
       <ContactHeader />
       <div className="contact-layout">
-        <ContactForm />
         <ContactInfo />
+        <ContactForm />
       </div>
       <ContactMap />
       <ContactSocials />
