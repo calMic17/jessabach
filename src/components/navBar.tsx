@@ -26,7 +26,7 @@ function NavigationBar() {
           <li>About</li>
           <li>Servises</li>
           <li>Contact</li>
-          <Button variant="dark">Enroll Now</Button>
+          <Button variant="enroll">Enroll Now</Button>
         </ul>
       </nav>
       
