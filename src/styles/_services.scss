@@ -1,0 +1,100 @@
+@use "sass:color";
+@use './variables' as *;
+
+.services-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.services-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    font-family: $serif-font;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    color: $dark;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: color.adjust($dark, $lightness: 30%);
+    line-height: 1.6;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+
+  .service-card {
+    padding: 3rem 2rem;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 1rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+      border-color: $gold;
+    }
+
+    .icon-box {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: $gold;
+    }
+
+    h3 {
+      font-family: $serif-font;
+      font-size: 1.75rem;
+      color: $dark;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: color.adjust($dark, $lightness: 25%);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .instrument-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+
+      span {
+        font-size: 0.75rem;
+        background: $gray-light;
+        padding: 0.25rem 0.75rem;
+        border-radius: 100px;
+        color: $dark;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services-page {
+    padding: 4rem 1.5rem;
+    gap: 4rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

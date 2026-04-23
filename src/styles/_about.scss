@@ -157,14 +157,36 @@
   .about-story,
   .about-mission {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: center; // Centers the text container
     gap: 1.5rem;
 
     h2 {
-      order: 1;
-      &::after { left: 50%; transform: translateX(-50%); }
+      order: 1 ;   // Force the title to come first
+      text-align: center;     // Center the text
+      margin-bottom: 1.5rem;
+
+      &::after { 
+        left: 50% ; // Center the gold line
+        right: auto ;
+        transform: translateX(-50%); 
+      }
     }
-    p { order: 2; }
+
+    p {
+      order: 2 ;    // Force the paragraph to come second
+      text-align: center;
+    }
+  }
+
+  // Ensure the mission section (which was flipped on desktop) also resets
+  .about-mission {
+    h2 {
+      order: 1 ;
+      text-align: center;
+    }
+    p {
+      order: 2 ;
+    }
   }
 
   .about-stats {
