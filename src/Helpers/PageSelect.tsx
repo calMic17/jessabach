@@ -7,6 +7,7 @@ import Contact from "../pages/ContactUs";
 function PageSelect() {
   return (
     <Routes>
+      <Route index element={<Home />} /> {/* Default route */}
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
