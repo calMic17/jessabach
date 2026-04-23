@@ -1,0 +1,174 @@
+@use "sass:color";
+@use './variables' as *;
+
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem; // Increased gap for better "breathing" space
+}
+
+// Hero Section - Editorial Style
+.about-hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    font-family: $serif-font;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    color: $dark;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: color.adjust($dark, $lightness: 30%);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+}
+
+// Story & Mission - Split Layout feel
+.about-story,
+.about-mission {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 4rem;
+
+  h2 {
+    font-family: $serif-font;
+    font-size: 2.5rem;
+    color: $dark;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: $gold;
+    }
+  }
+
+  p {
+    color: color.adjust($dark, $lightness: 20%);
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+}
+
+// Flip Mission to provide visual variety
+.about-mission {
+  grid-template-columns: 1.5fr 1fr;
+  
+  h2 {
+    order: 2;
+    text-align: right;
+    &::after { left: auto; right: 0; }
+  }
+  p { order: 1; }
+}
+
+// Stats Section - Minimal & Bold
+.about-stats {
+  display: flex;
+  justify-content: space-around;
+  background: $dark;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  color: white;
+
+  .stat {
+    h3 {
+      font-family: $serif-font;
+      font-size: 3.5rem;
+      color: $gold;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #ccc;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// Team Section - Modern Cards
+.about-team {
+  text-align: center;
+
+  h2 {
+    font-family: $serif-font;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    .member {
+      padding: 2.5rem 1.5rem;
+      background: white;
+      border: 1px solid #f0f0f0;
+      border-radius: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        border-color: $gold;
+      }
+
+      h4 {
+        font-family: $serif-font;
+        font-size: 1.5rem;
+        color: $dark;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: $gold;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.05rem;
+      }
+    }
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .about-page {
+    padding: 4rem 1.5rem;
+    gap: 5rem;
+  }
+
+  .about-story,
+  .about-mission {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+
+    h2 {
+      order: 1;
+      &::after { left: 50%; transform: translateX(-50%); }
+    }
+    p { order: 2; }
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
