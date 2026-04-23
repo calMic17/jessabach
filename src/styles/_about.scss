@@ -157,7 +157,7 @@
   .about-story,
   .about-mission {
     grid-template-columns: 1fr;
-    text-align: center; // Centers the text container
+    text-align: center !important; // Centers the text container
     gap: 1.5rem;
 
     h2 {
