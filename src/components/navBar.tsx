@@ -17,7 +17,7 @@ function NavigationBar() {
   };
 
   const navItems = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" }
@@ -27,7 +27,7 @@ function NavigationBar() {
     <div className="app-wrapper">
       <nav className="navbar">
         {/* Logo (kept same class) */}
-        <h1 className="logo"><Link to="/" className="no-underline text-inherit">JessaBach</Link></h1>
+        <h1 className="logo"><Link to="/home" className="no-underline text-inherit">JessaBach</Link></h1>
 
         {/* Hamburger */}
         <NavBarHamburger isOpen={isMenuOpen} toggle={toggleMenu} />
