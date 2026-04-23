@@ -1,12 +1,11 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+// import { createRoot } from 'react-dom/client'
+import ReactDOM from "react-dom/client";
 import './index.scss'
-import NavBar from './components/navBar'
-import Hero from './components/Hero'
+import App from './App'
 
-createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <NavBar />
-    <Hero />
+    <App />
   </StrictMode>,
 )

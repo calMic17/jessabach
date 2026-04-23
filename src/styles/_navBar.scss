@@ -62,19 +62,12 @@
           color: $gold;
         }
 
-        &.btn-enroll {
-          background-color: $gold;
-          color: white;
-          border-radius: 1rem 1.5rem;;
 
-          &:hover {
-            filter: brightness(1.1);
-            color: white;
-          }
-        }
       }
     }
-
+    .nav-button {
+      padding: 1rem 1.5rem;
+    }
   }
 
   .hero {

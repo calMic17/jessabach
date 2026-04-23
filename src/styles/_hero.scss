@@ -1,3 +1,4 @@
+@use "sass:color";
 @use './variables' as *;
 
 .hero-section {
@@ -34,7 +35,7 @@
 
     .hero-description {
       font-size: 1.125rem;
-      color: lighten($dark, 30%);
+      color: color.adjust($dark, $lightness: 30%);
       line-height: 1.6;
       margin-bottom: 2.5rem;
     }
@@ -54,7 +55,11 @@
     .abstract-shape {
       width: 400px;
       height: 500px;
-      background: linear-gradient(135deg, $gold 0%, darken($gold, 15%) 100%);
+      background: linear-gradient(
+        135deg,
+        $gold 0%,
+        color.adjust($gold, $lightness: -15%) 100%
+      );
       border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; // Organic shape
       opacity: 0.1;
       position: absolute;

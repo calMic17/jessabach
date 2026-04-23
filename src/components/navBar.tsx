@@ -1,6 +1,8 @@
-import { useState } from 'react';
-import Button from './Button';
-import '../styles/_navBar.scss';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "./Button";
+import NavBarHamburger from "./navBarHamburger";
+import "../styles/_navBar.scss";
 
 function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,34 +11,54 @@ function NavigationBar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  return (
+  // 👇 close menu when clicking a link (mobile UX improvement)
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" }
+  ];
+
+  return (
     <div className="app-wrapper">
       <nav className="navbar">
-        <h1 className="logo">JessaBach</h1>
-        
-        <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-        </button>
+        {/* Logo (kept same class) */}
+        <h1 className="logo"><Link to="/" className="no-underline text-inherit">JessaBach</Link></h1>
 
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          {/* <li>Servises</li> */}
-          <li>About</li>
-          <li>Servises</li>
-          <li>Contact</li>
-          <Button variant="enroll">Enroll Now</Button>
+        {/* Hamburger */}
+        <NavBarHamburger isOpen={isMenuOpen} toggle={toggleMenu} />
+
+        {/* Nav Links */}
+        <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+          
+          {navItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  onClick={handleLinkClick}
+                  className="no-underline text-inherit"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+
+          {/* Keep your custom Button */}
+            <Button
+              variant="enroll"
+              className="nav-button"
+              onClick={handleLinkClick}
+            >
+              Enroll Now
+            </Button>
+
         </ul>
       </nav>
-      
-      {/* <main className="hero">
-        <h2>Where Tradition Meets Technique.</h2>
-        <p>Start your musical journey with JessaBach Music Academy.</p>
-      </main> */}
-
     </div>
-    
   );
 }
 
