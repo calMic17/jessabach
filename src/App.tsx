@@ -6,11 +6,11 @@ import Hero from "./components/Hero";
 
 
 function App() {
- const page = PageComponent;
+ const CurrentPage = PageComponent;
   return (
     <BrowserRouter>
       <NavBar />
-      {page === undefined ? <PageComponent /> : <Hero />}
+      {CurrentPage ? <CurrentPage /> : <Hero />}
     </BrowserRouter>
   );
 }
