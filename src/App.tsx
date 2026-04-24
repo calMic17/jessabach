@@ -2,15 +2,16 @@ import { BrowserRouter } from "react-router-dom";
 import './index.scss'
 import NavBar from './components/navBar'
 import PageComponent from "./Helpers/PageSelect";
-import Hero from "./components/Hero";
 
 
 function App() {
- const CurrentPage = PageComponent;
+
+  const baseName = import.meta.env.BASE_URL || "/";
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={baseName}>
       <NavBar />
-      {CurrentPage ? <CurrentPage /> : <Hero />}
+      <PageComponent />
     </BrowserRouter>
   );
 }
