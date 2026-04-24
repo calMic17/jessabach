@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import NavBarHamburger from "./navBarHamburger";
+import Logo from "../../../public/Logo/JessaBach.png";
 import "../../styles/_navBar.scss";
 
 function NavigationBar() {
@@ -28,7 +29,7 @@ function NavigationBar() {
     <div className="app-wrapper">
       <nav className="navbar">
         {/* Logo (kept same class) */}
-        <h1 className="logo"><Link to="/home" className="no-underline text-inherit">JessaBach</Link></h1>
+        <h1 className="logo"><Link to="/home" className="no-underline text-inherit"> <img src={Logo} alt="Logo" /></Link></h1>
 
         {/* Hamburger */}
         <NavBarHamburger isOpen={isMenuOpen} toggle={toggleMenu} />
