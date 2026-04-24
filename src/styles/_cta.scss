@@ -1,0 +1,68 @@
+@use "sass:color";
+@use './variables' as *;
+
+.cta-section {
+  padding: 6rem 50px;
+  background-color: $dark; // Dark background for high contrast
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle decorative element to match the Hero style
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: $gold;
+    opacity: 0.05;
+    border-radius: 50%;
+  }
+
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+
+    h2 {
+      font-family: $serif-font;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #d1d5db; // Light gray for better readability on dark
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    
+    // Centers the button if it's a flex/block element
+    .btn-enroll {
+      margin: 0 auto;
+      display: inline-block;
+    }
+  }
+}
+
+// Tablet and Mobile Adjustments
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 4rem 1.5rem;
+
+    .cta-content {
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}

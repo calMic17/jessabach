@@ -20,7 +20,8 @@ function NavigationBar() {
     { name: "Home", path: "/home" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" }
+    { name: "Contact", path: "/contact" },
+    { name: "Gallery", path: "/gallery" },
   ];
 
   return (
