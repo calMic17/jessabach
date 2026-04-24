@@ -6,11 +6,11 @@ import Hero from "./components/Hero";
 
 
 function App() {
-
+ const page = PageComponent;
   return (
     <BrowserRouter>
       <NavBar />
-      {PageComponent ? <PageComponent /> : <Hero />}
+      {page === undefined ? <PageComponent /> : <Hero />}
     </BrowserRouter>
   );
 }
