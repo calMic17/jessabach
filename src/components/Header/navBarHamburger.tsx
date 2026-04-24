@@ -11,9 +11,9 @@ function NavBarHamburger({ isOpen, toggle }: HamburgerProps) {
       onClick={toggle}
       aria-label="Toggle menu"
     >
-      <span className={`hamburger-line ${isOpen ? "open" : ""}`}></span>
-      <span className={`hamburger-line ${isOpen ? "open" : ""}`}></span>
-      <span className={`hamburger-line ${isOpen ? "open" : ""}`}></span>
+      <span className={`hamburger-line ${isOpen ? "open" : ""}`} test-id="hamburger-line"></span>
+      <span className={`hamburger-line ${isOpen ? "open" : ""}`} test-id="hamburger-line"></span>
+      <span className={`hamburger-line ${isOpen ? "open" : ""}`} test-id="hamburger-line"></span>
     </button>
   );
 }

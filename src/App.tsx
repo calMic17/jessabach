@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import './index.scss'
-import NavBar from './components/navBar/navBar'
+import NavBar from './components/Header/navBar'
 import PageComponent from "./Helpers/PageSelect";
 import Footer from "./components/footer/Footer";
 
