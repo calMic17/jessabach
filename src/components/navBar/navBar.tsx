@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import Button from "../Button";
 import NavBarHamburger from "./navBarHamburger";
-import "../styles/_navBar.scss";
+import "../../styles/_navBar.scss";
 
 function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

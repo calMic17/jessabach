@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Services from "../pages/Services";
 import Contact from "../pages/ContactUs";
-import Hero from "../components/Hero";
+import Hero from "../components/home/Hero";
 
 function PageSelect() {
 

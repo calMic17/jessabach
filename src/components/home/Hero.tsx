@@ -1,5 +1,5 @@
-import Button from './Button';
-import '../styles/_hero.scss';
+import Button from '../Button';
+import '../../styles/_hero.scss';
 
 function Hero() {
   return (
