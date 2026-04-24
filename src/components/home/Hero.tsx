@@ -1,7 +1,17 @@
 import Button from '../Button';
 import '../../styles/_hero.scss';
+import { useEffect, useState } from 'react';
 
 function Hero() {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section className="hero-section">
       <div className="hero-content">
@@ -17,8 +27,9 @@ function Hero() {
         </div>
       </div>
       <div className="hero-visual">
+      
         {/* You can replace this with an <img> tag for a piano or instrument */}
-        <div className="abstract-shape"></div>
+        {!isMobile && <div className="abstract-shape"></div>}
       </div>
     </section>
   );
