@@ -28,6 +28,7 @@
         height: auto;   // Keeps the aspect ratio perfect
         display: block; // Removes unwanted bottom spacing
         padding-left: 15%;
+        mix-blend-mode: multiply; //Removes the white background allowing blends with the background color
       }
     }
 
