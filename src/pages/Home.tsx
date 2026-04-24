@@ -1,8 +1,8 @@
 // src/pages/Home.tsx
-import Hero from "../components/Home/Hero";
-import Features from "../components/Home/Features";
-import Testimonials from "../components/Home/Testimonials";
-import CTA from "../components/Home/CTA";
+import Hero from "../components/home/Hero";
+import Features from "../components/home/Features";
+import Testimonials from "../components/home/Testimonials";
+import CTA from "../components/home/CTA";
 
 function Home() {
   return (
