@@ -1,0 +1,3 @@
+Need to clean up the About Page Component full or duplicate code & need to create a constant file for it to move static string
+same for Service commponent 
+not satisfied with hero page css right now
