@@ -1,8 +1,10 @@
+import { CONTACT_STRINGS } from "./healpers/constants";
+
 function ContactHeader() {
   return (
     <div className="contact-header">
-      <h1>Contact Us</h1>
-      <p>We’d love to hear from you. Send us a message anytime.</p>
+      <h1>{CONTACT_STRINGS.CONTACT_US_HEADER}</h1>
+      <p>{CONTACT_STRINGS.CONTACT_US_BODY}</p>
     </div>
   );
 }

@@ -1,4 +1,7 @@
 import { useState } from "react";
+// import emailjs from '@emailjs/browser';
+import { CONTACT_INFO, CONTACT_STRINGS } from "./healpers/constants";
+
 
 function ContactForm() {
   const [form, setForm] = useState({
@@ -13,10 +16,15 @@ function ContactForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(form);
-    alert("Message sent!");
+  
+    const subject = encodeURIComponent(`Message from ${form.name}`);
+    const body = encodeURIComponent(`Sender Email: ${form.email}\n\nMessage: ${form.message}`);
+    
+    // This triggers the user's local email client
+    window.location.href = `mailto:${CONTACT_INFO.EMAIL}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -39,7 +47,7 @@ function ContactForm() {
         onChange={handleChange}
       />
 
-      <button type="submit">Send Message</button>
+      <button type="submit">{CONTACT_STRINGS.SEND_MESSAGE}</button>
     </form>
   );
 }
