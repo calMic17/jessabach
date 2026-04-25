@@ -22,14 +22,12 @@ export interface GalleryItem {
   videoId?: string; // Required only if type is 'video'
 }
 
-// This helper checks if we are on GH Pages or localhost
-const base = import.meta.env.BASE_URL; 
-
-export const GALLERY_IMAGES = [
+export const GALLERY_IMAGES: GalleryItem[] = [
   { id: 1, videoId: "yllkeb6nIpo", src: "", size: "large", type: "video" },
-  { id: 2, src: `${base}Gallery/Mic-Fuku-Long.jpeg`, size: "tall", type: "image" }, 
-  { id: 4, src: `${base}Gallery/Mic-Fuku.jpeg`, size: "small", type: "image" },
+  { id: 2, src: "/Gallery/Mic-Fuku-Long.jpeg", size: "tall", type: "image" }, 
+  { id: 4, src: "/Gallery/Mic-Fuku.jpeg", size: "small", type: "image" },
+  // { id: 5, src: "/images/img5.jpg", size: "small", type: "image" },
   { id: 6, videoId: "WfMHccaJ6C4", src: "", size: "large", type: "video" },
-  { id: 7, src: `${base}Gallery/Mic-Sax.jpeg`, size: "tall", type: "image" },
-  { id: 8, src: `${base}Gallery/Mic-Fuku-Small.jpeg`, size: "small", type: "image" },
+  { id: 7, src: "/Gallery/Mic-Sax.jpeg", size: "tall", type: "image" },
+  { id: 8, src: "/Gallery/Mic-Fuku-Small.jpeg", size: "small", type: "image" },
 ];
