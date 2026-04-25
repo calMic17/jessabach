@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 function Hero() {
 
+  const BASE_URL = "/jessabach"; // Base URL for gallery images - Dont forget to update this when deploying to production!
+
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -29,7 +31,8 @@ function Hero() {
       <div className="hero-visual">
       
         {/* You can replace this with an <img> tag for a piano or instrument */}
-        {!isMobile && <div className="abstract-shape"></div>}
+        {/* {!isMobile && <div className="abstract-shape"></div>} */}
+        {!isMobile && <div> <img src={ `${BASE_URL}/HomePage/piano-illu.jpg` } alt="" /></div>}
       </div>
     </section>
   );

@@ -52,6 +52,12 @@
     justify-content: center;
     position: relative;
 
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
     .abstract-shape {
       width: 400px;
       height: 500px;
