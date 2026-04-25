@@ -1,6 +1,6 @@
 import "../styles/_gallery.scss";
 import { GALLERY_IMAGES } from "./helpers/constants";
-import VideoPlayer from "../components/gallary/VideoPlayer";     // Import your new video handler
+import VideoPlayer from "../components/gallery/VideoPlayer"; 
 
 function Gallery() {
   return (

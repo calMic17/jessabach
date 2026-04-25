@@ -1,4 +1,4 @@
-// src/components/gallary/videoPlayer.tsx
+// src/components/gallery/videoPlayer.tsx
 
 interface VideoPlayerProps {
   videoId: string;
